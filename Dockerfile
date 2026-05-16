@@ -11,6 +11,10 @@ COPY . /var/www/html/
 
 WORKDIR /var/www/html
 
-RUN chmod -R 777 /var/www/html/writable
+RUN chmod -R 777 /var/www/html
+
+RUN echo "<Directory /var/www/html>\nAllowOverride All\nRequire all granted\n</Directory>" > /etc/apache2/conf-available/custom.conf
+
+RUN a2enconf custom
 
 EXPOSE 80
