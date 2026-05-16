@@ -11,8 +11,6 @@ COPY . /var/www/html/
 
 WORKDIR /var/www/html
 
-RUN mv public/* /var/www/html/
-
 RUN chmod -R 777 /var/www/html/writable
 
 EXPOSE 80
